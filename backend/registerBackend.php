@@ -13,18 +13,18 @@ if(isset($_POST['email']) && isset($_POST['password']))
     if($datas)
     {
         // die("User already exist with this email.");
-        echo "<script>alert('User already exist with this email.')</script>";
+        echo "<script>alert('User already exist with this email.');window.location.href='../frontend/register.php';</script>";
         die;
     }
     $query=$conn->prepare("INSERT INTO `customers` (`name`, `email`, `password`) VALUES ('$name', '$email', '$password')");
     $result=$query->execute();
     if($result)
     {
-        echo "<script>alert('Signup successful! Please login.');</script>";
+        echo "<script>alert('Signup successful! Please login.');window.location.href='../frontend/login.php';</script>";
     }
     else
     {
-        echo "<script>alert('Something went wrong! Please try again.');</script>";
+        echo "<script>alert('Something went wrong! Please try again.');window.location.href='../frontend/register.php';</script>";
 
     }
 }

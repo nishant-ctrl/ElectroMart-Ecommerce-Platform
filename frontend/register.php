@@ -14,7 +14,7 @@
             <h1 class="text-4xl font-bold">Electromart</h1>
             <div class="text-sm">
                 Already have an account?
-                <a href="#" class="text-blue-300 hover:underline">Sign in</a>
+                <a href="./login.php" class="text-blue-300 hover:underline">Sign in</a>
             </div>
         </nav>
     </header>
