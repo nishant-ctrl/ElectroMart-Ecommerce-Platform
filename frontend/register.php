@@ -9,9 +9,22 @@
 </head>
 
 <body class="bg-gray-100 font-sans">
-    <header class="bg-blue-800 text-white shadow-md">
+    <header class="bg-blue-600 text-white shadow-md">
         <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-            <h1 class="text-4xl font-bold">Electromart</h1>
+            <div class="col-span-3 flex items-center space-x-2">
+            <span class="text-2xl font-bold text-red-500">e</span>
+            <span class="text-2xl font-bold text-blue-500">l</span>
+            <span class="text-2xl font-bold text-yellow-500">e</span>
+            <span class="text-2xl font-bold text-green-500">c</span>
+            <span class="text-2xl font-bold text-purple-500">t</span>
+            <span class="text-2xl font-bold text-teal-500">r</span>
+            <span class="text-2xl font-bold text-blue-500">o</span>
+            <span class="text-2xl font-bold text-orange-500">m</span>
+            <span class="text-2xl font-bold text-red-500">a</span>
+            <span class="text-2xl font-bold text-green-500">r</span>
+            <span class="text-2xl font-bold text-violet-500">t</span>
+    
+        </div>
             <div class="text-sm">
                 Already have an account?
                 <a href="./login.php" class="text-blue-300 hover:underline">Sign in</a>
@@ -61,9 +74,9 @@
             </form>
         </div>
     </main>
-    <footer class="bg-blue-800 text-white text-center py-4">
-        &copy; 2024 Electromart Inc. All Rights Reserved.
-    </footer>
+    <footer>
+  <?php include("./footer.php");?>
+</footer>
 </body>
 
 </html>

@@ -9,12 +9,25 @@
 </head>
 
 <body class="bg-gray-100 font-sans">
-    <header class="bg-blue-800 text-white shadow-md">
+    <header class="bg-blue-600 text-white shadow-md">
         <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-    <a href="#" class="text-4xl font-bold">Electromart</a>
-    <div class="text-sm">
+        <div class="col-span-3 flex items-center space-x-2">
+            <span class="text-2xl font-bold text-red-500">e</span>
+            <span class="text-2xl font-bold text-blue-500">l</span>
+            <span class="text-2xl font-bold text-yellow-500">e</span>
+            <span class="text-2xl font-bold text-green-500">c</span>
+            <span class="text-2xl font-bold text-purple-500">t</span>
+            <span class="text-2xl font-bold text-teal-500">r</span>
+            <span class="text-2xl font-bold text-blue-500">o</span>
+            <span class="text-2xl font-bold text-orange-500">m</span>
+            <span class="text-2xl font-bold text-red-500">a</span>
+            <span class="text-2xl font-bold text-green-500">r</span>
+            <span class="text-2xl font-bold text-violet-500">t</span>
+    
+        </div>
+        <div class="text-sm">
         <a href="#" class="text-red-400 hover:underline">Tell us what you think</a>
-    </div>
+        </div>
 </nav>
     </header>
 
@@ -55,9 +68,9 @@
         </div>
 
     </main>
-    <footer class="bg-blue-800 text-white text-center py-4">
-        &copy; 2024 Electromart Inc. All Rights Reserved.
-    </footer>
+    <footer>
+  <?php include("./footer.php");?>
+</footer>
 </body>
 
 </html>
