@@ -21,7 +21,8 @@
 
               <a href="index.php" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</a>
               <a href="categoryPage.php" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Add Category</a>
-              <a href="productPage.php" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Add Products</a>
+              <a href="productPage.php" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Products</a>
+              <a href="addproduct.php" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Add Product</a>
               <a href="customerPage.php" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Customers</a>
               
         </div>
@@ -75,7 +76,11 @@
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><img class="h-20 w-20" src="./uploads/<?= $data['image'];?>" alt="<?=  $data['name'];?>"></td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><?= $data['status'] == '0'?"Visible":"Hidden"; ?></td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-lg font-medium">
-                        <a href="editCategory.php?id=<?=  $data['id'];?>" class="text-indigo-600 hover:underline">Edit</a>
+                        <a class="mx-2 px-2" href="editCategory.php?id=<?=  $data['id'];?>" class="text-indigo-600 hover:underline">Edit</a>
+                        <form action="deleteCategory.php" method="post">
+                          <input type="hidden" name="category_id" value="<?= $data['id'];?>">
+                          <button class="mx-2 px-2" name="delete-category-btn" type="submit">Delete</button>
+                        </form>
                         </td>
                         </tr>
                     <?php    

@@ -26,8 +26,9 @@
                         <a href="categoryPage.php" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Add Category</a>
                         <a href="productPage.php"
                             class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-                            aria-current="page">Add
-                            Products</a>
+                            aria-current="page">Products</a>
+                        <a href="addProduct.php"
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Add Product</a>
                         <a href="customerPage.php"
                             class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Customers</a>
 
@@ -40,7 +41,7 @@
 
         <header class="bg-white shadow">
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                <h1 class="text-3xl font-bold tracking-tight text-gray-900">Add Products</h1>
+                <h1 class="text-3xl font-bold tracking-tight text-gray-900">Products</h1>
             </div>
         </header>
         <main>

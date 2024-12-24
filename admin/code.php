@@ -55,18 +55,20 @@
         {
             $new_filename=$old_image;
         }
-        $query=$conn->prepare("UPDATE categories SET name='$name' , slug='$slug' , description='$description' , popular='$popular' , image='$new_filename' , meta_title='$meta_title' , meta_description='$meta_description' , meta_keywords='$meta_keywords' WHERE id='$category_id'");
+        $query=$conn->prepare("UPDATE categories SET name='$name' , slug='$slug' , description='$description' ,status='$status', popular='$popular' , image='$new_filename' , meta_title='$meta_title' , meta_description='$meta_description' , meta_keywords='$meta_keywords' WHERE id='$category_id'");
         $result=$query->execute();
         if($result)
         {
-            if($_FILES['image']['name']!="")
+            if($new_image!="")
             {
-                move_uploaded_file($_FILES['image']['tmp_name'] , $path.'/'.$new_filename);
+                $check=move_uploaded_file($_FILES['image']['tmp_name'] , $path.'/'.$new_filename);
             }
-            if(file_exists("uploads/".$old_image))
+            if($check)
             {
-
-                unlink("uploads/".$old_image);
+                if(file_exists("uploads/".$old_image))
+                {
+                    unlink("uploads/".$old_image);
+                }
             }
           
             echo "<script>alert('Updated Successfully');</script>";
