@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electromart</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="bg-gray-200">
@@ -16,8 +17,8 @@
     
 <!-- <div class="flex items-center justify-between p-4 bg-white border-b shadow"> -->
 <div class="grid grid-cols-12 p-4 bg-white border-b shadow">
-  <div class="col-span-3 mt-2 text-xl text-center space-x-2">
-    <span class="p-4 rounded-lg text-gray-600 bg-gray-100">Explore More</span>
+  <div class=" col-span-3 mt-2 text-xl text-center space-x-2">
+    <a class="hover:bg-blue-600 hover:text-white p-4 rounded-lg text-gray-600 bg-gray-100" href="category.php">Explore More</a>
   </div>
 
   <div class="col-span-9  mx-4 flex items-center w-full max-w-2xl">
@@ -28,7 +29,20 @@
     <select
       class="px-4 py-2 mx-4 rounded-md text-gray-600 bg-gray-100 focus:outline-none focus:ring focus:ring-blue-200">
       <option>All Categories</option>
-      <option>Antiques</option>
+      <?php
+        $query=$conn->prepare("SELECT * FROM categories WHERE status='0'");
+      $query->execute();
+      $data=$query->fetchAll();
+      if($data)
+      {
+        foreach($data as $item)
+        {
+        ?>
+          <option><?=$item['name'] ?></option>
+        <?php
+        }
+      }
+      ?>
     </select>
     <button class="px-6 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Search</button>
   </div>
@@ -43,45 +57,33 @@ include("./banner.php");
 
 <div class="bg-blue-200 py-8">
   <h2 class="text-center text-2xl font-semibold mb-6">Explore Popular Categories</h2>
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 px-4 md:px-16">
+  <div class="flex justify-evenly px-4 md:px-16">
 
-    <div class="flex flex-col items-center text-center">
-      <div class="hover:shadow-2xl bg-gray-100 p-6 rounded-full shadow-md">
-        <img src="../assest/products/watches/boAt Cosmos Pro 1.webp" alt="Watches" class="h-20 w-20">
-      </div>
-      <p class="mt-4 font-medium text-lg">Watches</p>
-    </div>
     
-    <div class="flex flex-col items-center text-center">
-      <div class="hover:shadow-2xl bg-gray-100 p-6 rounded-full shadow-md">
-        <img src="../assest/products/TV/LG 123 cm (49 inch) Ultra HD (4K) LED Smart WebOS TV (49UK7500PTA) 2.webp" alt="TVs" class="h-20 w-20">
-      </div>
-      <p class="mt-4 font-medium text-lg">Television</p>
-    </div>
-    <div class="flex flex-col items-center text-center">
-      <div class="hover:shadow-2xl bg-gray-100 p-6 rounded-full shadow-md">
-        <img src="../assest/products/speakers/Stone 350 3.webp" alt="speakers" class="h-20 w-20">
-      </div>
-      <p class="mt-4 font-medium text-lg">Speakers</p>
-    </div>
-    <div class="flex flex-col items-center text-center">
-      <div class="hover:shadow-2xl bg-gray-100 p-6 rounded-full shadow-md">
-        <img src="../assest/products/processor/GIGASTAR 3.2 GHz LGA 1156 Intel Core i5-650 For H55 Motherboard 1st Generation Processor (Silver) 1.webp" alt="Processor" class="h-20 w-20">
-      </div>
-      <p class="mt-4 font-medium text-lg">CPUs</p>
-    </div>
-    <div class="flex flex-col items-center text-center">
-      <div class="hover:shadow-2xl bg-gray-100 p-6 rounded-full shadow-md">
-        <img src="../assest/products/mobile/realme 7 Pro (Mirror Silver, 128 GB) (6 GB RAM) 1.webp" alt="Mobiles" class="h-20 w-20">
-      </div>
-      <p class="mt-4 font-medium text-lg">Mobiles</p>
-    </div>
-    <div class="flex flex-col items-center text-center">
-      <div class="hover:shadow-2xl bg-gray-100 p-6 rounded-full shadow-md">
-        <img src="../assest/products/camera/Canon EOS 5D Mark IV 30.4 MP Digital SLR Camera (Black) + EF 24-105mm is II USM Lens Kit 1.jpg" alt="camera" class="h-20 w-20">
-      </div>
-      <p class="mt-4 font-medium text-lg">Cameras</p>
-    </div>
+    
+    <?php 
+      $query=$conn->prepare("SELECT * FROM categories WHERE popular='1' AND status='0'");
+      $query->execute();
+      $data=$query->fetchAll();
+      if($data)
+      {
+        foreach($data as $item)
+        {
+        ?>
+        <div class="flex flex-col items-center text-center">
+          <div class="hover:shadow-2xl bg-gray-100 p-6 rounded-full shadow-md">
+          <img src="../admin/uploads/<?=$item['image'] ?>" alt="<?=$item['name'] ?>" class="h-20 w-20">
+        </div>
+        <p class="mt-4 font-medium text-lg"><?=$item['name'] ?></p>
+        </div>
+        <?php
+        }
+      }
+      else
+      {
+        echo "<h1>No popular categories<h1>";
+      }
+    ?>
     
   </div>
 </div>

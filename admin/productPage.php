@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Category</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -46,11 +47,75 @@
         </header>
         <main>
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                <!-- Your content -->
-            </div>
+
+       
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900">Categories</h2>
+            
+<div class="overflow-x-auto">
+  <table class="min-w-full divide-y divide-gray-200">
+    <thead class="bg-gray-50">
+      <tr>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Id</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+        <th scope="col" class="relative px-6 py-3">
+          <span class="sr-only">Edit</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+      
+      
+        <?php
+            $query=$conn->prepare("SELECT * FROM products ");
+            $result=$query->execute();
+            $products=$query->fetchAll();
+            
+            if($products)
+            {
+                foreach($products as $item)
+                {
+                    ?>
+
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><?= $item['id'];?></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><?=  $item['name'];?></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><img class="h-20 w-20" src="./uploads/<?= $item['image'];?>" alt="<?=  $item['name'];?>"></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><?= $item['status'] == '0'?"Visible":"Hidden"; ?></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-lg font-medium">
+                        <a class="mx-2 px-2" href="editProduct.php?id=<?=  $item['id'];?>" class="text-indigo-600 hover:underline">Edit</a>
+                        <form action="deleteProduct.php" method="post">
+                          <input type="text" hidden name="product_id" value="<?= $item['id'] ?>">
+                        
+                          <button class="mx-2 px-2" name="delete-product-btn" type="submit">Delete</button>
+                        </form>
+                        </td>
+                        </tr>
+                    <?php    
+
+                }
+            }
+            else
+            {
+                echo "<h1>No Records Found</h1>";
+            }
+        ?>
+
+
+
+
+    </tbody>
+  </table>
+</div>
+
+       
+    </div>
         </main>
     </div>
-
+<footer>
+  <?php include("../frontend/footer.php");?>
+</footer>
 </body>
 
 </html>
