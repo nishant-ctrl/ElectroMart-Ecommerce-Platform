@@ -14,7 +14,6 @@ if(isset($_POST['email']) && isset($_POST['password']))
         if(password_verify($password,$datas[0]['password']))
         {
             $_SESSION['id']=$datas[0]['id'];
-            $_SESSION['id']=$datas[0]['id'];
             $_SESSION['name']=$datas[0]['name'];
             $_SESSION['email']=$datas[0]['email'];
             echo "<script>alert('Sign in Successful.');window.location.href='../frontend/index.php';</script>";

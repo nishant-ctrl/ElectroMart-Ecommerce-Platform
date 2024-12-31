@@ -24,7 +24,7 @@
             <a class="px-6 text-lg hover:underline" href="login.php">Login</a>
             <a class="px-6 text-lg hover:underline" href="register.php">Register</a>
         <?php else: ?>
-            <a href="dashboard.php" class="px-6 text-lg hover:underline">Home</a>
+            <a href="index.php" class="px-6 text-lg hover:underline">Home</a>
             <a href="cart.php" class="px-6 text-lg hover:underline">Cart</a>
             <a href="contact.php" class="px-6 text-lg hover:underline">Contact</a>
             <a href="../backend/logout.php" class="px-6 text-lg hover:underline">Logout</a>

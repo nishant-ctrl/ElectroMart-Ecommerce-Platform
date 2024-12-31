@@ -55,5 +55,8 @@
 <footer>
   <?php include("./footer.php");?>
 </footer>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+    <script> alertify.set('notifier','position', 'top-right');
+    </script>
 </body>
 </html>
