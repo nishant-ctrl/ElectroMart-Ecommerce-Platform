@@ -3,7 +3,7 @@
         <!-- <div>
             <a href="#" class="text-4xl font-bold">Electromart</a>
         </div> -->
-        <a href="#">
+        <a href="index.php">
         <div class="col-span-3 flex items-center space-x-2">
             <span class="text-2xl font-bold text-red-500">e</span>
             <span class="text-2xl font-bold text-blue-500">l</span>

@@ -30,8 +30,10 @@
                             aria-current="page">Products</a>
                         <a href="addProduct.php"
                             class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Add Product</a>
+                            <a href="orders.php"
+              class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Orders</a>
                         <a href="customerPage.php"
-                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Customers</a>
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact Form</a>
 
                     </div>
                 </div>
@@ -81,7 +83,7 @@
                     <tr>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><?= $item['id'];?></td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><?=  $item['name'];?></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><img class="h-20 w-20" src="./uploads/<?= $item['image'];?>" alt="<?=  $item['name'];?>"></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><img class="h-20 w-20 object-contain" src="./uploads/<?= $item['image'];?>" alt="<?=  $item['name'];?>"></td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><?= $item['status'] == '0'?"Visible":"Hidden"; ?></td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-lg font-medium">
                         <a class="mx-2 px-2" href="editProduct.php?id=<?=  $item['id'];?>" class="text-indigo-600 hover:underline">Edit</a>

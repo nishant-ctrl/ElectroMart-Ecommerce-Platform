@@ -80,6 +80,25 @@
             header("Location:./editCategory.php");
         }
 
-    }   
+    }
+    elseif(isset($_POST['update_order_btn']))  
+    {
+        $tracking_no=$_POST['tracking_no'];
+        $status=$_POST['order_status'];
+
+        $query=$conn->prepare("UPDATE orders SET status='$status' WHERE tracking_no='$tracking_no'");
+        $result=$query->execute();
+        if($result)
+        {
+            $_SESSION['message']="Updated Successfully";
+            header("Location:viewOrder.php?tracking_no=$tracking_no");
+        }
+        else
+        {
+            $_SESSION['message']="Something went wrong";
+            header("Location:viewOrder.php?tracking_no=$tracking_no");
+        
+        }
+    } 
 ?>
 
