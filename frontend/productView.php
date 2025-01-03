@@ -82,7 +82,7 @@
                 <button class="w-full bg-blue-600 text-white py-3 px-6 text-xl rounded-md hover:bg-blue-700 transition" id="addToCart" value="<?=$product['id']?>">
                     Add to Cart
                 </button>
-                <button class="w-full bg-red-600 text-white py-3 px-6 text-xl rounded-md hover:bg-red-700 transition">
+                <button class="w-full bg-red-600 text-white py-3 px-6 text-xl rounded-md hover:bg-red-700 transition" id="addToWishlist" value="<?=$product['id']?>">
                     Wishlist
                 </button>
             </div>
@@ -155,6 +155,39 @@
                 alertify.success("Product added to cart successfully!");
                 } else if (response == "updated") {
                 alertify.success("Product already in cart and quantity updated!");
+                } else if (response == 500) {
+                alertify.error("An error occurred. Please try again.");
+                } else {
+                alertify.error("An error occurred. Please try again.");
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("AJAX Error: " + error);
+                alertify.error("Failed to communicate with the server.");
+            },
+            });
+        });
+        const addToWishlistBtn = document.getElementById("addToWishlist");
+        addToWishlistBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            
+            let productId = document.getElementById("addToWishlist").value;
+
+            $.ajax({
+            url: "../backend/handleWishlist.php",
+            method: "POST",
+            data: {
+                product_id: productId,
+               
+                scope: "add",
+            },
+            success: function (response) {
+                if (response == 401) {
+                alertify.error("Please Login first to add to wishlist");
+                } else if (response == 201) {
+                alertify.success("Product added to wishlist successfully!");
+                } else if (response == "already_in_wishlist") {
+                alertify.success("Product already in wishlist");
                 } else if (response == 500) {
                 alertify.error("An error occurred. Please try again.");
                 } else {

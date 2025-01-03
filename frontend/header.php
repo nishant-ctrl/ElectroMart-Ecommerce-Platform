@@ -26,6 +26,7 @@
         <?php else: ?>
             <a href="index.php" class="px-6 text-lg hover:underline">Home</a>
             <a href="cart.php" class="px-6 text-lg hover:underline">Cart</a>
+            <a href="wishlist.php" class="px-6 text-lg hover:underline">Wishlist</a>
             <a href="contact.php" class="px-6 text-lg hover:underline">Contact</a>
             <a href="../backend/logout.php" class="px-6 text-lg hover:underline">Logout</a>
         <?php endif; ?>
