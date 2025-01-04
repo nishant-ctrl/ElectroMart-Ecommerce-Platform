@@ -11,7 +11,7 @@
 <?php
     include("../backend/config.php");
     include("../frontend/header.php");
-    if(isset($_SESSION['id']) && $_SESSION['role']!=1)
+    if(!isset($_SESSION['id']) && $_SESSION['role']!=1)
         {
           header("location:../frontend/index.php");
         }
@@ -34,6 +34,7 @@
     </div>
   </nav>
 
+  
   <!-- Header -->
   <header class="bg-white shadow">
     <div class="container mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">

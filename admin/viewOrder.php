@@ -17,7 +17,7 @@
 <?php
         include("../backend/config.php");
         include("../frontend/header.php");
-        if(isset($_SESSION['id']) && $_SESSION['role']!=1)
+        if(!isset($_SESSION['id']) && $_SESSION['role']!=1)
         {
           header("location:../frontend/index.php");
         }
