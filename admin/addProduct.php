@@ -13,8 +13,12 @@
   <?php
         include("../backend/config.php");
         include("../frontend/header.php");
+        if(isset($_SESSION['id']) && $_SESSION['role']!=1)
+        {
+          header("location:../frontend/index.php");
+        }
     ?>
-  <div class="min-h-full">
+  <div class="min-h-full min-h-screen">
     <nav class="bg-blue-500">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">

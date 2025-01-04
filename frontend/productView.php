@@ -30,7 +30,7 @@
         if($product)
         {
             ?>
-    <div class="container mx-auto px-4 py-12">
+    <div class="container min-h-screen mx-auto px-4 py-12">
         <div class=" flex flex-col lg:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden lg:space-x-8">
   
             <div class="lg:w-1/2">

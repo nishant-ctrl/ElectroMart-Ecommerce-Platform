@@ -1,6 +1,6 @@
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active h-[470px]">
+    <div class="carousel-item active">
       <img src="../assest/banner/img5.webp" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item h-[470px]">

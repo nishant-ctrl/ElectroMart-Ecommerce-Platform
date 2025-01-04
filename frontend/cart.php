@@ -27,7 +27,7 @@ $query->execute();
 $cartItems = $query->fetchAll();
 ?>
   
-<div class="container mx-auto py-8 px-4 lg:px-8">
+<div class="container min-h-screen mx-auto py-8 px-4 lg:px-8">
     <h1 class="text-3xl font-bold text-gray-900 mb-6">Your Cart</h1>
     
     <?php if (empty($cartItems)){ ?>

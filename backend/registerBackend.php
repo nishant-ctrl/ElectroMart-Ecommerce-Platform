@@ -7,6 +7,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
     $name=$firstName.$lastName;
     $password=password_hash($_POST['password'],PASSWORD_BCRYPT);
     $email=$_POST['email'];
+    $role=$_POST['role'];
     $getData=$conn->prepare("SELECT * FROM customers WHERE email='$email'");
     $getData->execute();
     $datas=$getData->fetchAll();
@@ -16,7 +17,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
         echo "<script>alert('User already exist with this email.');window.location.href='../frontend/register.php';</script>";
         die;
     }
-    $query=$conn->prepare("INSERT INTO `customers` (`name`, `email`, `password`) VALUES ('$name', '$email', '$password')");
+    $query=$conn->prepare("INSERT INTO `customers` (`name`, `email`, `password` ,`role_as`) VALUES ('$name', '$email', '$password' , '$role')");
     $result=$query->execute();
     if($result)
     {

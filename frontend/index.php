@@ -16,7 +16,7 @@
         include("./header.php");
     ?>
     
-<!-- <div class="flex items-center justify-between p-4 bg-white border-b shadow"> -->
+
   <form action="search.php" method="get">
 <div class="grid grid-cols-12 p-4 bg-white border-b shadow">
   <div class=" col-span-3 mt-2 text-xl text-center space-x-2">
@@ -62,7 +62,7 @@ include("./banner.php");
 
 <div class="bg-blue-200 py-8">
   <h2 class="text-center text-2xl font-semibold mb-6">Explore Popular Categories</h2>
-  <div class="flex justify-evenly px-4 md:px-16">
+  <div class="flex flex-wrap justify-evenly px-4 md:px-16">
 
     
     

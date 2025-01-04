@@ -44,7 +44,7 @@
     }
 ?>
 
-<div class="container mx-auto py-8 px-6 lg:px-12">
+<div class="container min-h-screen mx-auto py-8 px-6 lg:px-12">
     <div class="flex items-center justify-between bg-blue-600 rounded-lg p-6 shadow-lg">
     <h1 class="text-4xl font-bold text-white">View Order</h1>
     <a href="myOrders.php" 

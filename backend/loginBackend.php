@@ -4,7 +4,8 @@ if(isset($_POST['email']) && isset($_POST['password']))
 {
     $email=$_POST['email'];
     $password=$_POST['password'];
-    $query=$conn->prepare("SELECT * FROM customers WHERE email='$email'");
+    $role=$_POST['role'];
+    $query=$conn->prepare("SELECT * FROM customers WHERE email='$email' AND role_as='$role'");
     $query->execute();
     $datas=$query->fetchAll();
     if($datas)
@@ -16,7 +17,16 @@ if(isset($_POST['email']) && isset($_POST['password']))
             $_SESSION['id']=$datas[0]['id'];
             $_SESSION['name']=$datas[0]['name'];
             $_SESSION['email']=$datas[0]['email'];
-            echo "<script>alert('Sign in Successful.');window.location.href='../frontend/index.php';</script>";
+            if($datas[0]['role_as']==1)
+            {
+                $_SESSION['role']=1;
+                echo "<script>alert('Sign in Successful as Admin.');window.location.href='../admin/index.php';</script>";
+            }
+            else
+            {
+                $_SESSION['role']=0;
+                echo "<script>alert('Sign in Successful as User.');window.location.href='../frontend/index.php';</script>";
+            }
         }
         else
         {
@@ -26,7 +36,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
     }
     else
     {
-        echo "<script>alert('No user found with this email.');window.location.href='../frontend/login.php';</script>";
+        echo "<script>alert('No user found with this email and role.');window.location.href='../frontend/login.php';</script>";
         die;
     }
 }

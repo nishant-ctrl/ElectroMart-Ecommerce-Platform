@@ -37,7 +37,7 @@
 
     ?>
 
-    <div class="container mx-auto px-4 py-8">
+    <div class="container min-h-screen mx-auto px-4 py-8">
         <div class="container mx-auto px-4 py-6">
             <h1 class="text-3xl font-bold text-blue-700 ">
                 Search Results for: <span class="text-gray-900"><?=$search_text?></span>

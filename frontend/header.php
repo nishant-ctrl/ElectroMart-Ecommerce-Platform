@@ -25,9 +25,12 @@
             <a class="px-6 text-lg hover:underline" href="register.php">Register</a>
         <?php else: ?>
             <a href="index.php" class="px-6 text-lg hover:underline">Home</a>
+            <?php if (isset($_SESSION['id']) && $_SESSION['role'] == 0) { ?>
             <a href="cart.php" class="px-6 text-lg hover:underline">Cart</a>
+            <a href="myOrders.php" class="px-6 text-lg hover:underline">Orders</a>
             <a href="wishlist.php" class="px-6 text-lg hover:underline">Wishlist</a>
             <a href="contact.php" class="px-6 text-lg hover:underline">Contact</a>
+            <?php } ?>
             <a href="../backend/logout.php" class="px-6 text-lg hover:underline">Logout</a>
         <?php endif; ?>
         </div>

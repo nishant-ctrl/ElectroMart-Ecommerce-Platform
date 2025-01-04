@@ -33,6 +33,7 @@
         }  
     ?>
     </nav>
+    <div class="min-h-screen">
     <div class=" p-6 bg-white shadow-md rounded-lg w-full ">
         <h2 class="h-900px text-3xl font-semibold text-center mb-8">Contact Us</h2>
     </div>
@@ -70,6 +71,7 @@
             Email: contact@electromart.co.in <br> Phone: +91-1234567890
         </div>
     </section>
+    </div>
     <footer>
         <?php include 'footer.php';?>
     </footer>

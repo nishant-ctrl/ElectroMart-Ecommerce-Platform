@@ -22,7 +22,7 @@
         }
         ?>
 <form action="../backend/placeOrder.php" method="post">
-    <div class="my_cart_data grid grid-cols-12">
+    <div class="my_cart_data min-h-screen grid grid-cols-12">
         <?php
         $user_id = $_SESSION['id'];
         $query = $conn->prepare("SELECT c.id as cid,c.product_qty, c.product_id,p.id as pid,p.name , p.image , p.selling_price FROM carts c, products p WHERE c.product_id = p.id AND c.user_id = '$user_id' ORDER BY c.id DESC ");

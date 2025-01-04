@@ -27,7 +27,7 @@
 
     ?>
 
-    <div class="container mx-auto px-4 py-8">
+    <div class="container min-h-screen mx-auto px-4 py-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <?php
             $query=$conn->prepare("SELECT * FROM products WHERE category_id='$category_id' AND status='0'");
