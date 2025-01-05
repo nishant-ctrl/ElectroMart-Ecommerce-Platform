@@ -55,7 +55,7 @@
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
 
        
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900">Categories</h2>
+            
             
 <div class="overflow-x-auto">
   <table class="min-w-full divide-y divide-gray-200">
