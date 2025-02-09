@@ -80,7 +80,7 @@ if(isset($_SESSION['id']))
 
         <div class="md:col-span-6">
             <img class="object-cover rounded-3xl shadow-lg"
-                src="../assets/images/login.jpg"
+                src="../assest/images/login.jpg"
                 alt="Register">
         </div>
 
