@@ -33,33 +33,33 @@
             <h1 class="text-3xl font-bold text-gray-900 mb-6">Basic Details</h1>
             <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
                 
-                    <!-- Name -->
+                    
                     <div>
                         <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
                         <input type="text"  name="name" required placeholder="Enter Full Name"
                             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-200" />
                     </div>
-                    <!-- Email -->
+                    
                     <div>
                         <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
                         <input type="email"  name="email" required placeholder="Enter your Email"
                             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-200" />
                     </div>
-                    <!-- Phone -->
+                    
                     <div>
                         <label for="phone" class="block text-gray-700 font-medium mb-2">Phone</label>
                         <input type="tel"  name="phone" pattern="[0-9]{10}" required 
                             placeholder="Enter 10-digit number"
                             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-200" />
                     </div>
-                    <!-- PIN -->
+                   
                     <div>
                         <label for="pin" class="block text-gray-700 font-medium mb-2">PIN</label>
                         <input type="text" name="pin" pattern="[0-9]{6}" required 
                             placeholder="Enter 6-digit PIN"
                             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-200" />
                     </div>
-                    <!-- Address -->
+                  
                     <div>
                         <label for="address" class="block text-gray-700 font-medium mb-2">Address</label>
                         <textarea  name="address" rows="4" required 
