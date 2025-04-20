@@ -82,6 +82,11 @@ if(isset($_SESSION['id']))
                         <option value="0">User</option>
                     </select>
                 </div>
+                <div id="admin-password-field" style="display: none;">
+                    <label for="adminPassword" class="block text-sm font-medium text-gray-700">Admin Secret</label>
+                    <input type="password" name="adminPassword" id="adminPassword" placeholder="Enter admin secret"
+                        class="w-full px-4 py-2 border rounded-lg bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                </div>
 
 
                 <button type="submit"
@@ -95,6 +100,21 @@ if(isset($_SESSION['id']))
     <footer>
   <?php include("./footer.php");?>
 </footer>
+<script>
+    const roleSelect = document.getElementById("role");
+    const adminPasswordField = document.getElementById("admin-password-field");
+
+    roleSelect.addEventListener("change", function () {
+        if (this.value === "1") {
+            adminPasswordField.style.display = "block";
+            document.getElementById("adminPassword").required = true;
+        } else {
+            adminPasswordField.style.display = "none";
+            document.getElementById("adminPassword").required = false;
+        }
+    });
+</script>
+
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
     <script> alertify.set('notifier','position', 'top-right');
     </script>

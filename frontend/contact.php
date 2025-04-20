@@ -51,7 +51,7 @@
             </div>
             <div>
                 <label for="phone" class="block text-gray-700 font-medium">Phone</label>
-                <input type="phone" id="phone" name="phone" class="w-full p-3 border border-gray-300 rounded-md"
+                <input type="phone" id="phone" pattern="[0-9]{10}" name="phone" class="w-full p-3 border border-gray-300 rounded-md"
                     placeholder="Your Phone" required>
             </div>
             <div>
@@ -75,7 +75,7 @@
     <footer>
         <?php include 'footer.php';?>
     </footer>
-
+    
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
     <script> alertify.set('notifier', 'position', 'top-right');
     </script>

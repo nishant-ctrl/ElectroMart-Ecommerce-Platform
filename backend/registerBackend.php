@@ -17,6 +17,16 @@ if(isset($_POST['email']) && isset($_POST['password']))
         echo "<script>alert('User already exist with this email.');window.location.href='../frontend/register.php';</script>";
         die;
     }
+    if ($_POST['role'] == "1") 
+    {
+        $adminPassword = $_POST['adminPassword'];
+        $correctAdminPassword = "NsecretN"; 
+        if ($adminPassword !== $correctAdminPassword) {
+            // die("Unauthorized admin registration attempt.");
+            echo "<script>alert('AdminSecret is incorrect! Please try again.');window.location.href='../frontend/register.php';</script>";
+        }
+    }
+
     $query=$conn->prepare("INSERT INTO `customers` (`name`, `email`, `password` ,`role_as`) VALUES ('$name', '$email', '$password' , '$role')");
     $result=$query->execute();
     if($result)
